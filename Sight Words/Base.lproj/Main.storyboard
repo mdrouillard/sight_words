@@ -30,7 +30,7 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="cLj-Ic-UKp" kind="show" id="oL7-RR-hMd"/>
+                                    <segue destination="yuC-qz-rDT" kind="show" id="V5h-eA-Pzi"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -41,32 +41,35 @@
             </objects>
             <point key="canvasLocation" x="-154.40000000000001" y="184.85757121439281"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="VjK-z8-uOa">
+        <!--View Controller2-->
+        <scene sceneID="gs5-d7-bDA">
             <objects>
-                <viewController id="cLj-Ic-UKp" sceneMemberID="viewController">
+                <viewController id="yuC-qz-rDT" customClass="ViewController2" customModule="Sight_Words" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="G24-4j-CXv"/>
-                        <viewControllerLayoutGuide type="bottom" id="Nth-VG-5cx"/>
+                        <viewControllerLayoutGuide type="top" id="cjZ-Ea-qiu"/>
+                        <viewControllerLayoutGuide type="bottom" id="n21-ba-aow"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="03O-bf-9C5">
+                    <view key="view" contentMode="scaleToFill" id="611-Kz-MUI">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Timer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MnR-9X-lxK">
-                                <rect key="frame" x="43" y="101" width="294" height="62"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="60" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XmY-wZ-6br">
+                                <rect key="frame" x="16" y="28" width="91" height="42"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="timerLabel" destination="XmY-wZ-6br" id="N0e-GK-Qu8"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="NyG-Ua-i8o" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dc4-Kh-Xzv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="676" y="184.85757121439281"/>
+            <point key="canvasLocation" x="840.79999999999995" y="184.85757121439281"/>
         </scene>
     </scenes>
 </document>
