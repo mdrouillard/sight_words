@@ -58,15 +58,12 @@ class ViewController2: UIViewController {
         }
         
         
-        // As long as there are words on the list, show the first one in the text label
+        // As long as there are words on the list, show the first one in the text label.
         
-        for kWord in kWords {
             if wordsLeft == true {
                 print(currentWord)
                 sightWordText.text = currentWord
                 
-            }
-            
         }
     }
     
