@@ -27,6 +27,7 @@ class ViewController2: UIViewController {
         
     }
     
+    @IBOutlet weak var sightWordText: UILabel!
     
     @IBOutlet weak var timerLabel: UILabel!
     
@@ -38,7 +39,35 @@ class ViewController2: UIViewController {
             timer.invalidate()
         }
         
+        // Word lists
+        var kWords : [String] = ["a", "and", "away", "big", "blue", "can", "come", "down", "find", "for", "funny", "go", "help", "here", "I", "in", "is", "it", "jump", "little", "look", "make", "me", "my", "not", "one", "play", "red", "run", "said", "see", "the", "three", "to", "two", "up", "we", "where", "yellow", "you"]
         
+        // Count the words in the array
+        var wordsList = kWords.count
+        print(wordsList)
+        var currentWord = kWords[0]
+        print(currentWord)
+        
+        
+        // Check to see if there are words left in the list
+        let wordsLeft : Bool
+        if wordsList > 0 {
+            wordsLeft = true
+        } else {
+            wordsLeft = false
+        }
+        
+        
+        // As long as there are words on the list, show the first one in the text label
+        
+        for kWord in kWords {
+            if wordsLeft == true {
+                print(currentWord)
+                sightWordText.text = currentWord
+                
+            }
+            
+        }
     }
     
     
