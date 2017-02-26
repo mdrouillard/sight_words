@@ -20,16 +20,14 @@ class ViewController2: UIViewController {
         super.viewDidLoad()
         
         
-        
-        
-        
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(ViewController2.counter), userInfo: nil, repeats: true)
-        
     }
-    
+    // text fields
     @IBOutlet weak var sightWordText: UILabel!
-    
     @IBOutlet weak var timerLabel: UILabel!
+    
+
+
     
     func counter() {
         seconds -= 1
@@ -44,9 +42,10 @@ class ViewController2: UIViewController {
         
         // Count the words in the array
         var wordsList = kWords.count
-        print(wordsList)
+        //print(wordsList)
         var currentWord = kWords[0]
-        print(currentWord)
+       //  print(currentWord)
+        
         
         
         // Check to see if there are words left in the list
@@ -60,20 +59,35 @@ class ViewController2: UIViewController {
         
         // As long as there are words on the list, show the first one in the text label.
         
-            if wordsLeft == true {
-                print(currentWord)
-                sightWordText.text = currentWord
+        if wordsLeft == true {
+    //       print(currentWord)
+            sightWordText.text = currentWord
                 
         }
+        
+        // Set up an array and variables to hold the answers
+        var answerWords = [String]()
+        let numberOfButtons = 4
+        var buttonsWithWords = 0
+        
+        func generateAnswers(){
+            // generate a random index placement for correct answer and insert it
+            while buttonsWithWords < numberOfButtons {
+                let randomIndex = Int(arc4random_uniform(UInt32(wordsList)))
+                answerWords.append(kWords[randomIndex])
+                buttonsWithWords += 1
+            }
+            // insert the correct answer at a random index of the array
+            let answerIndex = Int(arc4random_uniform(UInt32(4)))
+            answerWords.insert(currentWord, at: answerIndex)
+        }
+
+        
     }
     
     
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
+
     
     /*
      // MARK: - Navigation
