@@ -13,20 +13,31 @@ var seconds = 60
 var timer = Timer()
 
 class ViewController2: UIViewController {
+   
+    // text fields
+    @IBOutlet weak var sightWordText: UILabel!
+    @IBOutlet weak var timerLabel: UILabel!
     
+    // buttons
+    @IBOutlet weak var answerButton1: UIButton!
+    @IBOutlet weak var answerButton2: UIButton!
+    @IBOutlet weak var answerButton3: UIButton!
+    @IBOutlet weak var answerButton4: UIButton!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+       // start the timer
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(ViewController2.counter), userInfo: nil, repeats: true)
-    }
-    // text fields
-    @IBOutlet weak var sightWordText: UILabel!
-    @IBOutlet weak var timerLabel: UILabel!
-    
+     
+        answerButton1.setTitle("a", for: .normal)
+        answerButton2.setTitle("and", for: .normal)
+        answerButton3.setTitle("away", for: .normal)
+        answerButton4.setTitle("big", for: .normal)
 
+        
+    }
 
     
     func counter() {
@@ -62,7 +73,6 @@ class ViewController2: UIViewController {
         if wordsLeft == true {
     //       print(currentWord)
             sightWordText.text = currentWord
-                
         }
         
         // Set up an array and variables to hold the answers
@@ -80,23 +90,15 @@ class ViewController2: UIViewController {
             // insert the correct answer at a random index of the array
             let answerIndex = Int(arc4random_uniform(UInt32(4)))
             answerWords.insert(currentWord, at: answerIndex)
+            // populate the buttons
+            answerButton1.setTitle(answerWords[0], for: .normal)
+            answerButton2.setTitle(answerWords[1], for: .normal)
+            answerButton3.setTitle(answerWords[2], for: .normal)
+            answerButton4.setTitle(answerWords[3], for: .normal)
+
         }
 
-        
-    }
+   }
     
-    
-    
-
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
     
 }
