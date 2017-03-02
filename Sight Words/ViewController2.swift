@@ -49,71 +49,24 @@ class ViewController2: UIViewController {
         
         if seconds == 0 {
             timer.invalidate()
-        }
-        
-        // Word lists
-        var kWords : [String] = ["a", "and", "away", "big", "blue", "can", "come", "down", "find", "for", "funny", "go", "help", "here", "I", "in", "is", "it", "jump", "little", "look", "make", "me", "my", "not", "one", "play", "red", "run", "said", "see", "the", "three", "to", "two", "up", "we", "where", "yellow", "you"]
-        
-        // Count the words in the array
-        var wordsList = kWords.count
-        //print(wordsList)
-        var currentWord = kWords[0]
-       //  print(currentWord)
-        
-        
-        
-        // Check to see if there are words left in the list
-        let wordsLeft : Bool
-        if wordsList > 0 {
-            wordsLeft = true
         } else {
-            wordsLeft = false
+            return
         }
-        
-        
-        // As long as there are words on the list, show the first one in the text label.
-        
-        if wordsLeft == true {
-    //       print(currentWord)
-            sightWordText.text = currentWord
-        }
-        
-        // Set up an array and variables to hold the answers
-        var answerWords = [String]()
-        let numberOfButtons = 4
-        var buttonsWithWords = 0
-        
-        func generateAnswers(){
-            // generate a random index placement for correct answer and insert it
-            while buttonsWithWords < numberOfButtons {
-                let randomIndex = Int(arc4random_uniform(UInt32(wordsList)))
-                answerWords.append(kWords[randomIndex])
-                buttonsWithWords += 1
-            }
-            // insert the correct answer at a random index of the array
-            let answerIndex = Int(arc4random_uniform(UInt32(4)))
-            answerWords.insert(currentWord, at: answerIndex)
-            // populate the buttons
-            answerButton1.setTitle(answerWords[0], for: .normal)
-            answerButton2.setTitle(answerWords[1], for: .normal)
-            answerButton3.setTitle(answerWords[2], for: .normal)
-            answerButton4.setTitle(answerWords[3], for: .normal)
-
-        }
-
-   }
+    }
+    
     
     @IBAction func buttonOneAction(_ sender: UIButton) {
         // if correct, get new word, get new answers, remove correct word from array, add to timer, add to score
         if answerButton1.titleLabel?.text == correctWord {
             print("Correct!")
             
+            
         } else {
             print("Wrong!")
         }
     }
     
-    @IBAction func buttonTwoAction(_ sender: Any) {
+    @IBAction func buttonTwoAction(_ sender: UIButton) {
         if answerButton2.titleLabel?.text == correctWord {
             print("Correct!")
         } else {
@@ -123,7 +76,7 @@ class ViewController2: UIViewController {
         
     }
     
-    @IBAction func buttonThreeAction(_ sender: Any) {
+    @IBAction func buttonThreeAction(_ sender: UIButton) {
         if answerButton3.titleLabel?.text == correctWord {
             print("Correct!")
         } else {
@@ -140,5 +93,5 @@ class ViewController2: UIViewController {
         }
 
     }
-    
 }
+

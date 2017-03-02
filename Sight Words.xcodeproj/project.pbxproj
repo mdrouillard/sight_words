@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2E333A3C1E68DA52009D1359 /* WordManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E333A3B1E68DA52009D1359 /* WordManager.swift */; };
 		2E827B991E5A184300186DF6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E827B981E5A184300186DF6 /* AppDelegate.swift */; };
 		2E827B9B1E5A184300186DF6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E827B9A1E5A184300186DF6 /* ViewController.swift */; };
 		2E827B9E1E5A184300186DF6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E827B9C1E5A184300186DF6 /* Main.storyboard */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2E333A3B1E68DA52009D1359 /* WordManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordManager.swift; sourceTree = "<group>"; };
 		2E827B951E5A184300186DF6 /* Sight Words.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sight Words.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E827B981E5A184300186DF6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2E827B9A1E5A184300186DF6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -60,6 +62,7 @@
 				2E827B9A1E5A184300186DF6 /* ViewController.swift */,
 				2E827B9C1E5A184300186DF6 /* Main.storyboard */,
 				2EAB40521E5CC2D400359AC9 /* ViewController2.swift */,
+				2E333A3B1E68DA52009D1359 /* WordManager.swift */,
 				2E827B9F1E5A184300186DF6 /* Assets.xcassets */,
 				2E827BA11E5A184300186DF6 /* LaunchScreen.storyboard */,
 				2E827BA41E5A184300186DF6 /* Info.plist */,
@@ -142,6 +145,7 @@
 				2E827B9B1E5A184300186DF6 /* ViewController.swift in Sources */,
 				2E827B991E5A184300186DF6 /* AppDelegate.swift in Sources */,
 				2EAB40531E5CC2D400359AC9 /* ViewController2.swift in Sources */,
+				2E333A3C1E68DA52009D1359 /* WordManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
