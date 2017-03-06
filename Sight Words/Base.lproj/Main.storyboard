@@ -61,59 +61,60 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sight Word" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FNc-nH-R6m">
-                                <rect key="frame" x="97" y="109" width="180" height="65"/>
+                                <rect key="frame" x="97" y="78" width="180" height="65"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="skH-KW-ijy">
-                                <rect key="frame" x="34" y="249" width="307" height="62"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hFe-4w-Im3">
+                                <rect key="frame" x="127" y="245" width="120" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" title="Button1"/>
                                 <connections>
-                                    <action selector="buttonOneAction:" destination="yuC-qz-rDT" eventType="touchUpInside" id="RZF-fD-Y46"/>
+                                    <action selector="answerButton1:" destination="yuC-qz-rDT" eventType="touchUpInside" id="e2B-yO-MJY"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DuU-OY-pv4">
-                                <rect key="frame" x="34" y="395" width="307" height="62"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q3X-0v-rlQ">
+                                <rect key="frame" x="127" y="283" width="120" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" title="Button2"/>
                                 <connections>
-                                    <action selector="buttonOneAction:" destination="yuC-qz-rDT" eventType="touchUpInside" id="qKa-Xh-9rH"/>
-                                    <action selector="buttonThreeAction:" destination="yuC-qz-rDT" eventType="touchUpInside" id="jF2-L2-2HT"/>
+                                    <action selector="answerButton2:" destination="yuC-qz-rDT" eventType="touchUpInside" id="SLJ-sD-CPs"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sbK-LW-2YI">
-                                <rect key="frame" x="34" y="319" width="307" height="62"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HjY-V9-3oz">
+                                <rect key="frame" x="127" y="321" width="120" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" title="Button3"/>
                                 <connections>
-                                    <action selector="buttonOneAction:" destination="yuC-qz-rDT" eventType="touchUpInside" id="TVY-Zd-wqt"/>
-                                    <action selector="buttonTwoAction:" destination="yuC-qz-rDT" eventType="touchUpInside" id="jCU-tW-9MU"/>
+                                    <action selector="answerButton3:" destination="yuC-qz-rDT" eventType="touchUpInside" id="Qpe-t9-X7M"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F5O-us-jZi">
-                                <rect key="frame" x="34" y="476" width="307" height="62"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uY5-vt-bWs">
+                                <rect key="frame" x="127" y="359" width="120" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" title="Button4"/>
                                 <connections>
-                                    <action selector="buttonFourAction:" destination="yuC-qz-rDT" eventType="touchUpInside" id="3vC-dX-GNa"/>
-                                    <action selector="buttonOneAction:" destination="yuC-qz-rDT" eventType="touchUpInside" id="lWX-jP-OSf"/>
+                                    <action selector="answerButton4:" destination="yuC-qz-rDT" eventType="touchUpInside" id="sp9-nw-mEP"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k9B-96-wgY">
+                                <rect key="frame" x="97" y="151" width="175" height="76"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Word"/>
+                                <connections>
+                                    <action selector="readWord:" destination="yuC-qz-rDT" eventType="touchUpInside" id="ZbV-hr-7Fp"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <outlet property="answerButton1" destination="skH-KW-ijy" id="aCV-N1-qP6"/>
-                        <outlet property="answerButton2" destination="sbK-LW-2YI" id="3UE-xH-GyF"/>
-                        <outlet property="answerButton3" destination="DuU-OY-pv4" id="g6T-FO-BT6"/>
-                        <outlet property="answerButton4" destination="F5O-us-jZi" id="Umz-I6-9BV"/>
+                        <outlet property="button1" destination="hFe-4w-Im3" id="YTw-o1-NE8"/>
+                        <outlet property="button2" destination="Q3X-0v-rlQ" id="eeR-5R-vyZ"/>
+                        <outlet property="button3" destination="HjY-V9-3oz" id="a5t-Uu-WV6"/>
+                        <outlet property="button4" destination="uY5-vt-bWs" id="Qbe-st-0DX"/>
                         <outlet property="sightWordText" destination="FNc-nH-R6m" id="547-HF-oBw"/>
                         <outlet property="timerLabel" destination="XmY-wZ-6br" id="N0e-GK-Qu8"/>
                     </connections>

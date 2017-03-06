@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2E333A3C1E68DA52009D1359 /* WordManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E333A3B1E68DA52009D1359 /* WordManager.swift */; };
+		2E69E3681E6DB6B9005C94A3 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E69E3671E6DB6B9005C94A3 /* AVFoundation.framework */; };
 		2E827B991E5A184300186DF6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E827B981E5A184300186DF6 /* AppDelegate.swift */; };
 		2E827B9B1E5A184300186DF6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E827B9A1E5A184300186DF6 /* ViewController.swift */; };
 		2E827B9E1E5A184300186DF6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E827B9C1E5A184300186DF6 /* Main.storyboard */; };
@@ -18,6 +19,7 @@
 
 /* Begin PBXFileReference section */
 		2E333A3B1E68DA52009D1359 /* WordManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordManager.swift; sourceTree = "<group>"; };
+		2E69E3671E6DB6B9005C94A3 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		2E827B951E5A184300186DF6 /* Sight Words.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sight Words.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E827B981E5A184300186DF6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2E827B9A1E5A184300186DF6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -33,17 +35,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E69E3681E6DB6B9005C94A3 /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2E69E3661E6DB6B9005C94A3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2E69E3671E6DB6B9005C94A3 /* AVFoundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		2E827B8C1E5A184300186DF6 = {
 			isa = PBXGroup;
 			children = (
 				2E827B971E5A184300186DF6 /* Sight Words */,
 				2E827B961E5A184300186DF6 /* Products */,
+				2E69E3661E6DB6B9005C94A3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};

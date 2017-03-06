@@ -7,25 +7,27 @@
 //
 
 import UIKit
+import AVFoundation
 
-
-var seconds = 60
-var timer = Timer()
-
-// for debugging
-var correctWord = "a"
 
 class ViewController2: UIViewController {
    
+    var seconds = 60
+    var timer = Timer()
+    let synth = AVSpeechSynthesizer()
+    var myUtterance = AVSpeechUtterance(string: "")
+    
     // text fields
     @IBOutlet weak var sightWordText: UILabel!
     @IBOutlet weak var timerLabel: UILabel!
     
     // buttons
-    @IBOutlet weak var answerButton1: UIButton!
-    @IBOutlet weak var answerButton2: UIButton!
-    @IBOutlet weak var answerButton3: UIButton!
-    @IBOutlet weak var answerButton4: UIButton!
+    
+    @IBOutlet weak var button1: UIButton!
+    @IBOutlet weak var button2: UIButton!
+    @IBOutlet weak var button3: UIButton!
+    @IBOutlet weak var button4: UIButton!
+    
     
     
     override func viewDidLoad() {
@@ -33,13 +35,22 @@ class ViewController2: UIViewController {
         
        // start the timer
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(ViewController2.counter), userInfo: nil, repeats: true)
-     
-        answerButton1.setTitle("away", for: .normal)
-        answerButton2.setTitle("and", for: .normal)
-        answerButton3.setTitle("a", for: .normal)
-        answerButton4.setTitle("big", for: .normal)
-
         
+        // set the first sight word and answers
+        WordManager().chooseList()
+        sightWordText.text = WordManager().currentAnswer
+        WordManager().getAnswers()
+        
+        // read the word
+        myUtterance = AVSpeechUtterance(string: WordManager().currentAnswer)
+        synth.speak(myUtterance)
+        
+       
+        print("This should be the list \(WordManager().wordChoices)")
+        button1.setTitle("a", for: .normal)
+        button2.setTitle("and", for: .normal)
+        button3.setTitle("away", for: .normal)
+        button4.setTitle("big", for: .normal)
     }
 
     
@@ -54,44 +65,42 @@ class ViewController2: UIViewController {
         }
     }
     
-    
-    @IBAction func buttonOneAction(_ sender: UIButton) {
-        // if correct, get new word, get new answers, remove correct word from array, add to timer, add to score
-        if answerButton1.titleLabel?.text == correctWord {
-            print("Correct!")
-            
-            
-        } else {
-            print("Wrong!")
-        }
+    func resetWords() {
+        WordManager().getAnswers()
+        print(WordManager().currentList)
+        print("Words to work on \(WordManager().wordsToWorkOn)")
+ /*     button1.setTitle(WordManager().wordChoices[0], for: .normal)
+        button2.setTitle(WordManager().wordChoices[1], for: .normal)
+        button3.setTitle(WordManager().wordChoices[2], for: .normal)
+        button4.setTitle(WordManager().wordChoices[3], for: .normal) */
     }
     
-    @IBAction func buttonTwoAction(_ sender: UIButton) {
-        if answerButton2.titleLabel?.text == correctWord {
-            print("Correct!")
-        } else {
-            print("Wrong!")
-        }
-
+    @IBAction func readWord(_ sender: UIButton) {
+        myUtterance = AVSpeechUtterance(string: WordManager().currentAnswer)
+        synth.speak(myUtterance)
         
     }
-    
-    @IBAction func buttonThreeAction(_ sender: UIButton) {
-        if answerButton3.titleLabel?.text == correctWord {
-            print("Correct!")
-        } else {
-            print("Wrong!")
-        }
+    @IBAction func answerButton1(_ sender: UIButton) {
+        WordManager().answerKey(correct: WordManager().currentAnswer, guess: button1.currentTitle!)
+        resetWords()
+        
+    }
+    @IBAction func answerButton2(_ sender: UIButton) {
+        WordManager().answerKey(correct: WordManager().currentAnswer, guess: button2.currentTitle!)
+        resetWords()
 
     }
     
-    @IBAction func buttonFourAction(_ sender: UIButton) {
-        if answerButton4.titleLabel?.text == correctWord {
-            print("Correct!")
-        } else {
-            print("Wrong!")
-        }
+    @IBAction func answerButton3(_ sender: UIButton) {
+        WordManager().answerKey(correct: WordManager().currentAnswer, guess: button3.currentTitle!)
+        resetWords()
 
     }
+    
+    @IBAction func answerButton4(_ sender: UIButton) {
+        WordManager().answerKey(correct: WordManager().currentAnswer, guess: button4.currentTitle!)
+        resetWords()
+
+    }
+    
 }
-

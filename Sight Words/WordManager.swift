@@ -18,29 +18,34 @@ class WordManager {
     
     var firstWords: [String] = ["after", "again", "an", "any", "as", "ask", "by", "could", "every", "fly", "from", "give", "going", "had", "has", "her", "him", "his", "how", "just", "know", "let", "live", "may", "of", "old", "once", "open", "over", "put", "round", "some", "stop", "take", "thank", "them", "then", "think", "walk", "were", "when"]
     
-    var wordChoices: [String] = []
+    var wordChoices = Array<String>()
     var usedWords: [String] = []
     var currentAnswer = "a"
-    
+    var currentList = Array<String>()
+    var wordsToWorkOn = Array<String>()
+
     // Choose List & correct answer
     func chooseList() {
-        var currentList = preWords
-        currentAnswer = preWords[0]
-        
         if preWords.count > 0 {
+            currentAnswer = preWords[0]
             currentList = preWords
             
-        } else if preWords.count == 0 {
-            currentList = kWords
-            currentAnswer = kWords[0]
         }
-        else if currentList.count == 0 {
-            currentList = firstWords
+            
+        else if preWords.count == 0 {
+            currentAnswer = kWords[0]
+            currentList = kWords
+            
+        }
+        else if kWords.count == 0 {
             currentAnswer = firstWords[0]
+            currentList = firstWords
+            
         } else {
             print("You win!")
+            
         }
-        print(currentList)
+       
     }
     
     
@@ -63,7 +68,44 @@ class WordManager {
         let correctIndexPlacement = Int(arc4random_uniform(4))
         answerWords.insert(currentAnswer, at: correctIndexPlacement)
         wordChoices.append(contentsOf: answerWords)
+        print(answerWords)
+        print("From the manager \(wordChoices)")
+
     }
+    
+    func correctAnswerWordLists() {
+        usedWords.append(currentAnswer)
+        currentList.remove(at: 0)
+    }
+    
+    func wrongAnswerWordLists() {
+            currentList.append(currentAnswer)
+            wordsToWorkOn.append(currentAnswer)
+            currentList.remove(at: 0)
+    }
+    
+    
+    func answerKey(correct: String, guess: String)  {
+        
+        // if correct, select new word, add old word to used list
+        if correct == guess {
+            print("Right")
+            chooseList()
+            correctAnswerWordLists()
+            getAnswers()
+            
+        }
+        else {
+            // wrong answer:
+            print("Wrong")
+            chooseList()
+            wrongAnswerWordLists()
+            getAnswers()
+            
+        }
+    }
+    
+    
     
 }
 
