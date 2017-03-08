@@ -20,32 +20,30 @@ class WordManager {
     
     var wordChoices = Array<String>()
     var usedWords: [String] = []
-    var currentAnswer = "a"
+    var currentAnswer = ""
     var currentList = Array<String>()
     var wordsToWorkOn = Array<String>()
 
     // Choose List & correct answer
     func chooseList() {
         if preWords.count > 0 {
-            currentAnswer = preWords[0]
             currentList = preWords
             
         }
             
         else if preWords.count == 0 {
-            currentAnswer = kWords[0]
             currentList = kWords
             
         }
         else if kWords.count == 0 {
-            currentAnswer = firstWords[0]
             currentList = firstWords
             
         } else {
             print("You win!")
             
         }
-       
+        currentAnswer = currentList[0]
+
     }
     
     
@@ -62,26 +60,33 @@ class WordManager {
             let wrongWord = (allWords[randomIndex])
             answerWords.append(wrongWord)
             wordCount += 1
-            print(answerWords)
+           
         }
         // insert word at generated index placement
         let correctIndexPlacement = Int(arc4random_uniform(4))
         answerWords.insert(currentAnswer, at: correctIndexPlacement)
+        wordChoices.removeAll()
         wordChoices.append(contentsOf: answerWords)
-        print(answerWords)
-        print("From the manager \(wordChoices)")
-
+        
     }
     
     func correctAnswerWordLists() {
         usedWords.append(currentAnswer)
         currentList.remove(at: 0)
+        currentAnswer = currentList[0]
+        print(currentAnswer)
+        print("index0 \(currentList[0])")
+        print("index1 \(currentList[1])")
     }
     
     func wrongAnswerWordLists() {
-            currentList.append(currentAnswer)
             wordsToWorkOn.append(currentAnswer)
+            currentList.append(currentAnswer)
             currentList.remove(at: 0)
+            currentAnswer = currentList[0]
+            print(currentAnswer)
+        print("index0 \(currentList[0])")
+        print("index1 \(currentList[1])")
     }
     
     
@@ -90,7 +95,6 @@ class WordManager {
         // if correct, select new word, add old word to used list
         if correct == guess {
             print("Right")
-            chooseList()
             correctAnswerWordLists()
             getAnswers()
             
@@ -98,15 +102,13 @@ class WordManager {
         else {
             // wrong answer:
             print("Wrong")
-            chooseList()
             wrongAnswerWordLists()
             getAnswers()
+            
             
         }
     }
     
-    
-    
 }
 
- 
+let sharedWordManager = WordManager()

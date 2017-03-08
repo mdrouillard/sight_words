@@ -20,6 +20,7 @@ class ViewController2: UIViewController {
     // text fields
     @IBOutlet weak var sightWordText: UILabel!
     @IBOutlet weak var timerLabel: UILabel!
+    @IBOutlet weak var scoreLabel: UILabel!
     
     // buttons
     
@@ -37,20 +38,20 @@ class ViewController2: UIViewController {
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(ViewController2.counter), userInfo: nil, repeats: true)
         
         // set the first sight word and answers
-        WordManager().chooseList()
-        sightWordText.text = WordManager().currentAnswer
-        WordManager().getAnswers()
+        sharedWordManager.chooseList()
+        sightWordText.text = sharedWordManager.currentAnswer
+        sharedWordManager.getAnswers()
         
         // read the word
         myUtterance = AVSpeechUtterance(string: WordManager().currentAnswer)
         synth.speak(myUtterance)
         
        
-        print("This should be the list \(WordManager().wordChoices)")
-        button1.setTitle("a", for: .normal)
-        button2.setTitle("and", for: .normal)
-        button3.setTitle("away", for: .normal)
-        button4.setTitle("big", for: .normal)
+        print("This should be the list \(sharedWordManager.wordChoices)")
+        button1.setTitle(sharedWordManager.wordChoices[0], for: .normal)
+        button2.setTitle(sharedWordManager.wordChoices[1], for: .normal)
+        button3.setTitle(sharedWordManager.wordChoices[2], for: .normal)
+        button4.setTitle(sharedWordManager.wordChoices[3], for: .normal)
     }
 
     
@@ -66,39 +67,41 @@ class ViewController2: UIViewController {
     }
     
     func resetWords() {
-        WordManager().getAnswers()
-        print(WordManager().currentList)
-        print("Words to work on \(WordManager().wordsToWorkOn)")
- /*     button1.setTitle(WordManager().wordChoices[0], for: .normal)
-        button2.setTitle(WordManager().wordChoices[1], for: .normal)
-        button3.setTitle(WordManager().wordChoices[2], for: .normal)
-        button4.setTitle(WordManager().wordChoices[3], for: .normal) */
+        sharedWordManager.getAnswers()
+        print(sharedWordManager.wordChoices)
+        print("Words to work on \(sharedWordManager.wordsToWorkOn)")
+        sightWordText.text = sharedWordManager.currentAnswer
+        print(sightWordText)
+        button1.setTitle(sharedWordManager.wordChoices[0], for: .normal)
+        button2.setTitle(sharedWordManager.wordChoices[1], for: .normal)
+        button3.setTitle(sharedWordManager.wordChoices[2], for: .normal)
+        button4.setTitle(sharedWordManager.wordChoices[3], for: .normal)
     }
     
     @IBAction func readWord(_ sender: UIButton) {
-        myUtterance = AVSpeechUtterance(string: WordManager().currentAnswer)
+        myUtterance = AVSpeechUtterance(string: sharedWordManager.currentAnswer)
         synth.speak(myUtterance)
         
     }
     @IBAction func answerButton1(_ sender: UIButton) {
-        WordManager().answerKey(correct: WordManager().currentAnswer, guess: button1.currentTitle!)
+        sharedWordManager.answerKey(correct: sharedWordManager.currentAnswer, guess: button1.currentTitle!)
         resetWords()
         
     }
     @IBAction func answerButton2(_ sender: UIButton) {
-        WordManager().answerKey(correct: WordManager().currentAnswer, guess: button2.currentTitle!)
+        sharedWordManager.answerKey(correct: sharedWordManager.currentAnswer, guess: button2.currentTitle!)
         resetWords()
 
     }
     
     @IBAction func answerButton3(_ sender: UIButton) {
-        WordManager().answerKey(correct: WordManager().currentAnswer, guess: button3.currentTitle!)
+        sharedWordManager.answerKey(correct: sharedWordManager.currentAnswer, guess: button3.currentTitle!)
         resetWords()
 
     }
     
     @IBAction func answerButton4(_ sender: UIButton) {
-        WordManager().answerKey(correct: WordManager().currentAnswer, guess: button4.currentTitle!)
+        sharedWordManager.answerKey(correct: sharedWordManager.currentAnswer, guess: button4.currentTitle!)
         resetWords()
 
     }

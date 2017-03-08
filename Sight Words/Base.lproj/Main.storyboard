@@ -53,8 +53,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="60" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XmY-wZ-6br">
-                                <rect key="frame" x="16" y="28" width="91" height="42"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="60" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XmY-wZ-6br">
+                                <rect key="frame" x="16" y="28" width="41" height="42"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                 <nil key="textColor"/>
@@ -107,6 +107,13 @@
                                     <action selector="readWord:" destination="yuC-qz-rDT" eventType="touchUpInside" id="ZbV-hr-7Fp"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Score" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2AP-aU-jPk">
+                                <rect key="frame" x="287" y="39" width="72" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -115,6 +122,7 @@
                         <outlet property="button2" destination="Q3X-0v-rlQ" id="eeR-5R-vyZ"/>
                         <outlet property="button3" destination="HjY-V9-3oz" id="a5t-Uu-WV6"/>
                         <outlet property="button4" destination="uY5-vt-bWs" id="Qbe-st-0DX"/>
+                        <outlet property="scoreLabel" destination="2AP-aU-jPk" id="Bmo-WI-haW"/>
                         <outlet property="sightWordText" destination="FNc-nH-R6m" id="547-HF-oBw"/>
                         <outlet property="timerLabel" destination="XmY-wZ-6br" id="N0e-GK-Qu8"/>
                     </connections>
