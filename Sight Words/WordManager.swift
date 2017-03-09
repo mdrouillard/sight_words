@@ -92,14 +92,12 @@ class WordManager {
         
         // if correct, select new word, add old word to used list
         if correct == guess {
-            print("Right")
             correctAnswerWordLists()
             getAnswers()
             
         }
         else {
             // wrong answer:
-            print("Wrong")
             wrongAnswerWordLists()
             getAnswers()
             
