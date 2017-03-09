@@ -43,7 +43,7 @@ class ViewController2: UIViewController {
         sharedWordManager.getAnswers()
         
         // read the word
-        myUtterance = AVSpeechUtterance(string: WordManager().currentAnswer)
+        myUtterance = AVSpeechUtterance(string: sharedWordManager.currentAnswer)
         synth.speak(myUtterance)
         
        
@@ -86,23 +86,30 @@ class ViewController2: UIViewController {
     @IBAction func answerButton1(_ sender: UIButton) {
         sharedWordManager.answerKey(correct: sharedWordManager.currentAnswer, guess: button1.currentTitle!)
         resetWords()
-        
+        myUtterance = AVSpeechUtterance(string: sharedWordManager.currentAnswer)
+        synth.speak(myUtterance)
     }
     @IBAction func answerButton2(_ sender: UIButton) {
         sharedWordManager.answerKey(correct: sharedWordManager.currentAnswer, guess: button2.currentTitle!)
         resetWords()
+        myUtterance = AVSpeechUtterance(string: sharedWordManager.currentAnswer)
+        synth.speak(myUtterance)
 
     }
     
     @IBAction func answerButton3(_ sender: UIButton) {
         sharedWordManager.answerKey(correct: sharedWordManager.currentAnswer, guess: button3.currentTitle!)
         resetWords()
+        myUtterance = AVSpeechUtterance(string: sharedWordManager.currentAnswer)
+        synth.speak(myUtterance)
 
     }
     
     @IBAction func answerButton4(_ sender: UIButton) {
         sharedWordManager.answerKey(correct: sharedWordManager.currentAnswer, guess: button4.currentTitle!)
         resetWords()
+        myUtterance = AVSpeechUtterance(string: sharedWordManager.currentAnswer)
+        synth.speak(myUtterance)
 
     }
     
