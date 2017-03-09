@@ -75,8 +75,7 @@ class WordManager {
         currentList.remove(at: 0)
         currentAnswer = currentList[0]
         print(currentAnswer)
-        print("index0 \(currentList[0])")
-        print("index1 \(currentList[1])")
+       
     }
     
     func wrongAnswerWordLists() {
@@ -85,8 +84,7 @@ class WordManager {
             currentList.remove(at: 0)
             currentAnswer = currentList[0]
             print(currentAnswer)
-        print("index0 \(currentList[0])")
-        print("index1 \(currentList[1])")
+       
     }
     
     
