@@ -24,7 +24,7 @@ class WordManager {
     var currentList = Array<String>()
     var wordsToWorkOn = Array<String>()
 
-    // Choose List & correct answer
+    // Choose List
     func chooseList() {
         if preWords.count > 0 {
             currentList = preWords
@@ -42,11 +42,14 @@ class WordManager {
             print("You win!")
             
         }
-        currentAnswer = currentList[0]
 
     }
     
     
+    func setSightAnswer() {
+        chooseList()
+        currentAnswer = currentList[0]
+    }
     
     // AnswerCollector
     func getAnswers() {
@@ -92,6 +95,7 @@ class WordManager {
         
         // if correct, select new word, add old word to used list
         if correct == guess {
+            
             correctAnswerWordLists()
             getAnswers()
             

@@ -39,6 +39,7 @@ class ViewController2: UIViewController {
         
         // set the first sight word and answers
         sharedWordManager.chooseList()
+        sharedWordManager.setSightAnswer()
         sightWordText.text = sharedWordManager.currentAnswer
         sharedWordManager.getAnswers()
         
