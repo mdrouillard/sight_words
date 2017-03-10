@@ -42,6 +42,7 @@ class ViewController2: UIViewController {
         sharedWordManager.setSightAnswer()
         sightWordText.text = sharedWordManager.currentAnswer
         sharedWordManager.getAnswers()
+        scoreLabel.text = String(0)
         
         // read the word
         myUtterance = AVSpeechUtterance(string: sharedWordManager.currentAnswer)
@@ -67,11 +68,13 @@ class ViewController2: UIViewController {
         }
     }
     
+    
+    
     func resetWords() {
         sharedWordManager.getAnswers()
         print(sharedWordManager.wordChoices)
-        print("Words to work on \(sharedWordManager.wordsToWorkOn)")
         sightWordText.text = sharedWordManager.currentAnswer
+        scoreLabel.text = String(sharedWordManager.score)
         print(sightWordText)
         button1.setTitle(sharedWordManager.wordChoices[0], for: .normal)
         button2.setTitle(sharedWordManager.wordChoices[1], for: .normal)

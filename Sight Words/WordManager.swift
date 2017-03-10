@@ -25,6 +25,7 @@ class WordManager {
     var currentList = Array<String>()
     var wordsToWorkOn = Array<String>()
     var listCount = 0
+    var score = 0
 
     // Choose List
     func chooseList() {
@@ -46,6 +47,7 @@ class WordManager {
 
     }
     
+ 
     
     func setSightAnswer() {
         chooseList()
@@ -79,7 +81,6 @@ class WordManager {
         currentList.remove(at: 0)
         
         if currentList.count > 0 {
-             print("the words left are \(currentList.count)")
              currentAnswer = currentList[0]
         } else if currentList.count == 0 {
             listCount += 1
@@ -108,6 +109,7 @@ class WordManager {
             
             correctAnswerWordLists()
             getAnswers()
+            score += 1
             
         }
         else {
