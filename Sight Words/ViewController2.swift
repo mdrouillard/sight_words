@@ -59,6 +59,7 @@ class ViewController2: UIViewController {
         
         if sharedWordManager.seconds == 0 {
             timer.invalidate()
+            self.performSegue(withIdentifier: "gameOver", sender: nil)
         } else {
             return
         }
