@@ -85,6 +85,15 @@ class ViewController2: UIViewController {
         synth.speak(myUtterance)
     }
     
+    func gameWon() {
+        if sharedWordManager.listCount > 4 {
+            self.performSegue(withIdentifier: "gameOver", sender: nil)
+        }
+        else {
+            return
+        }
+    }
+    
     @IBAction func readWord(_ sender: UIButton) {
         sayWord()
         
@@ -93,12 +102,14 @@ class ViewController2: UIViewController {
     @IBAction func answerButton1(_ sender: UIButton) {
     
         sharedWordManager.answerKey(correct: sharedWordManager.currentAnswer, guess: button1.currentTitle!)
+        gameWon()
         resetWords()
         sayWord()
        
     }
     @IBAction func answerButton2(_ sender: UIButton) {
         sharedWordManager.answerKey(correct: sharedWordManager.currentAnswer, guess: button2.currentTitle!)
+        gameWon()
         resetWords()
         sayWord()
 
@@ -107,6 +118,7 @@ class ViewController2: UIViewController {
     
     @IBAction func answerButton3(_ sender: UIButton) {
         sharedWordManager.answerKey(correct: sharedWordManager.currentAnswer, guess: button3.currentTitle!)
+        gameWon()
         resetWords()
         sayWord()
 
@@ -114,6 +126,7 @@ class ViewController2: UIViewController {
     
     @IBAction func answerButton4(_ sender: UIButton) {
         sharedWordManager.answerKey(correct: sharedWordManager.currentAnswer, guess: button4.currentTitle!)
+        gameWon()
         resetWords()
         sayWord()
         

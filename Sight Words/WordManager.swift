@@ -23,12 +23,15 @@ class WordManager {
     
     var thirdWords: [String] = ["about", "better", "bring", "carry", "clean", "cut", "done", "draw", "drink", "eight", "fall", "far", "full", "got", "grow", "hold", "hot", "hurt", "if", "keep", "kind", "laugh", "light", "long", "much", "myself", "never", "only", "own", "pick", "seven", "shall", "show", "six", "small", "start", "ten", "today", "together", "try", "warm"]
     
+    
+    var noMoreWords: [String] = ["congratulations you won the game"]
+    
     var wordChoices = Array<String>()
     var usedWords: [String] = []
     var currentAnswer = ""
     var currentList = Array<String>()
     var wordsToWorkOn = Array<String>()
-    var listCount = 0
+    var listCount = 4
     var score = 0
     var seconds = 60
 
@@ -56,8 +59,8 @@ class WordManager {
         else if listCount == 4 {
             currentList = thirdWords
         }
-        else {
-            return
+        else if listCount > 4 {
+            currentList = noMoreWords
         }
 
     }
