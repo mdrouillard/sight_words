@@ -44,9 +44,8 @@ class ViewController2: UIViewController {
         scoreLabel.text = String(0)
         
         // read the word
-        myUtterance = AVSpeechUtterance(string: sharedWordManager.currentAnswer)
-        synth.speak(myUtterance)
-        
+        sayWord()
+         
        
         print("This should be the list \(sharedWordManager.wordChoices)")
         button1.setTitle(sharedWordManager.wordChoices[0], for: .normal)
@@ -81,39 +80,46 @@ class ViewController2: UIViewController {
         button4.setTitle(sharedWordManager.wordChoices[3], for: .normal)
     }
     
-    @IBAction func readWord(_ sender: UIButton) {
+    
+    func sayWord() {
         myUtterance = AVSpeechUtterance(string: sharedWordManager.currentAnswer)
+        myUtterance.rate = 0.5
+        myUtterance.preUtteranceDelay = 0.25
         synth.speak(myUtterance)
+    }
+    
+    @IBAction func readWord(_ sender: UIButton) {
+        sayWord()
         
     }
+    
     @IBAction func answerButton1(_ sender: UIButton) {
         sharedWordManager.answerKey(correct: sharedWordManager.currentAnswer, guess: button1.currentTitle!)
-        resetWords()
-        myUtterance = AVSpeechUtterance(string: sharedWordManager.currentAnswer)
-        synth.speak(myUtterance)
+            resetWords()
+        sayWord()
+       
     }
     @IBAction func answerButton2(_ sender: UIButton) {
         sharedWordManager.answerKey(correct: sharedWordManager.currentAnswer, guess: button2.currentTitle!)
         resetWords()
-        myUtterance = AVSpeechUtterance(string: sharedWordManager.currentAnswer)
-        synth.speak(myUtterance)
+        sayWord()
 
+       
     }
     
     @IBAction func answerButton3(_ sender: UIButton) {
         sharedWordManager.answerKey(correct: sharedWordManager.currentAnswer, guess: button3.currentTitle!)
         resetWords()
-        myUtterance = AVSpeechUtterance(string: sharedWordManager.currentAnswer)
-        synth.speak(myUtterance)
+        sayWord()
 
     }
     
     @IBAction func answerButton4(_ sender: UIButton) {
         sharedWordManager.answerKey(correct: sharedWordManager.currentAnswer, guess: button4.currentTitle!)
         resetWords()
-        myUtterance = AVSpeechUtterance(string: sharedWordManager.currentAnswer)
-        synth.speak(myUtterance)
-
+        sayWord()
+        
+        
     }
     
 }
