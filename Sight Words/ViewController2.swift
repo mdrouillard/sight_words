@@ -91,6 +91,7 @@ class ViewController2: UIViewController {
     }
     
     @IBAction func answerButton1(_ sender: UIButton) {
+    
         sharedWordManager.answerKey(correct: sharedWordManager.currentAnswer, guess: button1.currentTitle!)
         resetWords()
         sayWord()
