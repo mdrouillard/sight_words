@@ -26,6 +26,7 @@ class WordManager {
     var wordsToWorkOn = Array<String>()
     var listCount = 0
     var score = 0
+    var seconds = 60
 
     // Choose List
     func chooseList() {
@@ -110,6 +111,7 @@ class WordManager {
             correctAnswerWordLists()
             getAnswers()
             score += 1
+            seconds += 10
             
         }
         else {

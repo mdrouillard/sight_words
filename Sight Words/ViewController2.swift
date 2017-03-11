@@ -12,7 +12,6 @@ import AVFoundation
 
 class ViewController2: UIViewController {
    
-    var seconds = 60
     var timer = Timer()
     let synth = AVSpeechSynthesizer()
     var myUtterance = AVSpeechUtterance(string: "")
@@ -58,10 +57,10 @@ class ViewController2: UIViewController {
 
     
     func counter() {
-        seconds -= 1
-        timerLabel.text = String(seconds)
+        sharedWordManager.seconds -= 1
+        timerLabel.text = String(sharedWordManager.seconds)
         
-        if seconds == 0 {
+        if sharedWordManager.seconds == 0 {
             timer.invalidate()
         } else {
             return
