@@ -28,6 +28,9 @@ class WordManager {
     var score = 0
     var seconds = 60
 
+    
+
+
     // Choose List
     func chooseList() {
         if listCount ==  0 {
@@ -100,7 +103,6 @@ class WordManager {
     }
         
        
-
     
     
     func answerKey(correct: String, guess: String)  {
@@ -118,7 +120,6 @@ class WordManager {
             // wrong answer:
             wrongAnswerWordLists()
             getAnswers()
-            
             
         }
     }

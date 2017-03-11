@@ -17,7 +17,6 @@ class ViewController2: UIViewController {
     var myUtterance = AVSpeechUtterance(string: "")
     
     // text fields
-    @IBOutlet weak var sightWordText: UILabel!
     @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet weak var scoreLabel: UILabel!
     
@@ -39,13 +38,12 @@ class ViewController2: UIViewController {
         // set the first sight word and answers
         sharedWordManager.chooseList()
         sharedWordManager.setSightAnswer()
-        sightWordText.text = sharedWordManager.currentAnswer
         sharedWordManager.getAnswers()
         scoreLabel.text = String(0)
         
         // read the word
         sayWord()
-         
+        
        
         print("This should be the list \(sharedWordManager.wordChoices)")
         button1.setTitle(sharedWordManager.wordChoices[0], for: .normal)
@@ -71,9 +69,7 @@ class ViewController2: UIViewController {
     func resetWords() {
         sharedWordManager.getAnswers()
         print(sharedWordManager.wordChoices)
-        sightWordText.text = sharedWordManager.currentAnswer
         scoreLabel.text = String(sharedWordManager.score)
-        print(sightWordText)
         button1.setTitle(sharedWordManager.wordChoices[0], for: .normal)
         button2.setTitle(sharedWordManager.wordChoices[1], for: .normal)
         button3.setTitle(sharedWordManager.wordChoices[2], for: .normal)
@@ -95,7 +91,7 @@ class ViewController2: UIViewController {
     
     @IBAction func answerButton1(_ sender: UIButton) {
         sharedWordManager.answerKey(correct: sharedWordManager.currentAnswer, guess: button1.currentTitle!)
-            resetWords()
+        resetWords()
         sayWord()
        
     }
