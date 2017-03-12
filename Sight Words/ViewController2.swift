@@ -38,6 +38,7 @@ class ViewController2: UIViewController {
         // set the first sight word and answers
         sharedWordManager.chooseList()
         sharedWordManager.setSightAnswer()
+        sharedWordManager.defineWordLevels()
         sharedWordManager.getAnswers()
         scoreLabel.text = String(0)
         
@@ -59,6 +60,7 @@ class ViewController2: UIViewController {
         
         if sharedWordManager.seconds == 0 {
             timer.invalidate()
+            sharedScoreManager.calculateAchievedLevel()
             self.performSegue(withIdentifier: "gameOver", sender: nil)
         } else {
             return
@@ -87,6 +89,7 @@ class ViewController2: UIViewController {
     
     func gameWon() {
         if sharedWordManager.listCount > 4 {
+            sharedScoreManager.calculateAchievedLevel()
             self.performSegue(withIdentifier: "gameOver", sender: nil)
         }
         else {

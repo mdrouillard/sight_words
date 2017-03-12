@@ -12,24 +12,30 @@ class ResultsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        sharedScoreManager.calculateAchievedLevel()
+        
+        finalScoreLabel.text = " \(sharedScoreManager.totalNumberWords - sharedWordManager.score) more words to be the sight word champ"
+        
+        percentCorrect.text = "\(sharedScoreManager.percentCorrect)%"
+        
+        wordListToPractice.text = "from the \(sharedScoreManager.childAchievedLevel) word list"
 
         // Do any additional setup after loading the view.
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    // Labels
+    @IBOutlet weak var finalScoreLabel: UILabel!
+    @IBOutlet weak var percentCorrect: UILabel!
+    
+    @IBOutlet weak var wordListToPractice: UILabel!
+    
+    // Buttons
+    @IBAction func restartGame(_ sender: UIButton) {
+        sharedWordManager.resetGame()
+        
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+   
+   
 }

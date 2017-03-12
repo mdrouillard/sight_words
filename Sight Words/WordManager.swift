@@ -31,13 +31,15 @@ class WordManager {
     var currentAnswer = ""
     var currentList = Array<String>()
     var wordsToWorkOn = Array<String>()
-    var listCount = 4
+    var listCount = 0
     var score = 0
     var seconds = 60
-
+    var preschoolWordNumber = 0
+    var kindergardenWordNumber = 0
+    var firstGradeWordNumber = 0
+    var secondGradeWordNumber = 0
+    var thirdGradeWordNumber = 0
     
-
-
     // Choose List
     func chooseList() {
         if listCount ==  0 {
@@ -70,6 +72,15 @@ class WordManager {
     func setSightAnswer() {
         chooseList()
         currentAnswer = currentList[0]
+    }
+    
+    func defineWordLevels() {
+        preschoolWordNumber = preWords.count
+        kindergardenWordNumber = kWords.count
+        firstGradeWordNumber = firstWords.count
+        secondGradeWordNumber = secondWords.count
+        thirdGradeWordNumber = thirdWords.count
+
     }
     
     // AnswerCollector
@@ -108,6 +119,7 @@ class WordManager {
        
     }
     
+    
     func wrongAnswerWordLists() {
             wordsToWorkOn.append(currentAnswer)
             currentList.append(currentAnswer)
@@ -115,8 +127,13 @@ class WordManager {
             currentAnswer = currentList[0]
        
     }
-        
-       
+    
+    
+    func resetGame() {
+        listCount = 0
+        score = 0
+        seconds = 60
+    }
     
     
     func answerKey(correct: String, guess: String)  {
@@ -127,7 +144,7 @@ class WordManager {
             correctAnswerWordLists()
             getAnswers()
             score += 1
-            seconds += 10
+            seconds += 5
             
         }
         else {
