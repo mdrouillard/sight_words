@@ -25,7 +25,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sAY-4n-qmN">
-                                <rect key="frame" x="16" y="446" width="343" height="108"/>
+                                <rect key="frame" x="16" y="470" width="343" height="84"/>
                                 <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="60"/>
                                 <state key="normal" title="GO!">
@@ -39,7 +39,6 @@
                         <color key="backgroundColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="sAY-4n-qmN" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="36J-dw-DOa"/>
-                            <constraint firstItem="sAY-4n-qmN" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="426" id="LIC-bW-JXs"/>
                             <constraint firstItem="sAY-4n-qmN" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Zh4-p8-pjQ"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="sAY-4n-qmN" secondAttribute="bottom" constant="113" id="d6B-PX-bye"/>
                         </constraints>
@@ -124,7 +123,8 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="76" id="Hhm-GE-q3X"/>
                                 </constraints>
-                                <state key="normal" title="Word">
+                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                <state key="normal" title="►">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
@@ -223,7 +223,8 @@
                                 <rect key="frame" x="16" y="497" width="343" height="76"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Try Again!">
+                                <fontDescription key="fontDescription" type="system" pointSize="47"/>
+                                <state key="normal" title="⏎">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
@@ -267,6 +268,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="KGV-Gl-FFB"/>
+        <segue reference="V5h-eA-Pzi"/>
     </inferredMetricsTieBreakers>
 </document>

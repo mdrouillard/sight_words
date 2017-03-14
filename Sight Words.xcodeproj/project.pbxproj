@@ -120,6 +120,7 @@
 				TargetAttributes = {
 					2E827B941E5A184300186DF6 = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 26LRN437BL;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -288,6 +289,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 26LRN437BL;
 				INFOPLIST_FILE = "Sight Words/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.example.Sight-Words";
@@ -300,6 +302,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 26LRN437BL;
 				INFOPLIST_FILE = "Sight Words/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.example.Sight-Words";
