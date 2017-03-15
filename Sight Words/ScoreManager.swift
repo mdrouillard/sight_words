@@ -9,6 +9,9 @@
 import Foundation
 
 class ScoreManager {
+    
+    static let shared = ScoreManager()
+    
     var childAchievedLevel = ""
     var percentCorrect = 0
     var totalNumberWords = 0
@@ -16,12 +19,12 @@ class ScoreManager {
    
     
     func calculateAchievedLevel() {
-        let totalPreSchoolLevelWords = Double(sharedWordManager.preschoolWordNumber)
-        let totalFirstGradeLevelWords = Double(sharedWordManager.preschoolWordNumber + sharedWordManager.firstGradeWordNumber)
-        let totalSecondGradeLevelWords = totalFirstGradeLevelWords + Double(sharedWordManager.secondGradeWordNumber)
-        let totalThirdGradeLevelWords = totalSecondGradeLevelWords + Double(sharedWordManager.thirdGradeWordNumber)
+        let totalPreSchoolLevelWords = Double(WordManager.shared.preschoolWordNumber)
+        let totalFirstGradeLevelWords = Double(WordManager.shared.preschoolWordNumber + WordManager.shared.firstGradeWordNumber)
+        let totalSecondGradeLevelWords = totalFirstGradeLevelWords + Double(WordManager.shared.secondGradeWordNumber)
+        let totalThirdGradeLevelWords = totalSecondGradeLevelWords + Double(WordManager.shared.thirdGradeWordNumber)
         totalNumberWords = Int(totalThirdGradeLevelWords)
-        let scoreDouble = Double(sharedWordManager.score)
+        let scoreDouble = Double(WordManager.shared.score)
         
         
         if scoreDouble <= totalPreSchoolLevelWords {
@@ -50,4 +53,3 @@ class ScoreManager {
     }
 }
 
-let sharedScoreManager = ScoreManager()

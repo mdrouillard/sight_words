@@ -13,13 +13,13 @@ class ResultsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        sharedScoreManager.calculateAchievedLevel()
+        ScoreManager.shared.calculateAchievedLevel()
         
-        finalScoreLabel.text = " \(sharedScoreManager.totalNumberWords - sharedWordManager.score) more words to be the sight word champ"
+        finalScoreLabel.text = " \(ScoreManager.shared.totalNumberWords - WordManager.shared.score) more words to be the sight word champ"
         
-        percentCorrect.text = "\(sharedScoreManager.percentCorrect)%"
+        percentCorrect.text = "\(ScoreManager.shared.percentCorrect)%"
         
-        wordListToPractice.text = "from the \(sharedScoreManager.childAchievedLevel) word list"
+        wordListToPractice.text = "from the \(ScoreManager.shared.childAchievedLevel) word list"
 
         // Do any additional setup after loading the view.
     }
@@ -32,7 +32,7 @@ class ResultsViewController: UIViewController {
     
     // Buttons
     @IBAction func restartGame(_ sender: UIButton) {
-        sharedWordManager.resetGame()
+        WordManager.shared.resetGame()
         
     }
     

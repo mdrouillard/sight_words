@@ -36,31 +36,31 @@ class ViewController2: UIViewController {
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(ViewController2.counter), userInfo: nil, repeats: true)
         
         // set the first sight word and answers
-        sharedWordManager.chooseList()
-        sharedWordManager.setSightAnswer()
-        sharedWordManager.defineWordLevels()
-        sharedWordManager.getAnswers()
+        WordManager.shared.chooseList()
+        WordManager.shared.setSightAnswer()
+        WordManager.shared.defineWordLevels()
+        WordManager.shared.getAnswers()
         scoreLabel.text = String(0)
         
         // read the word
         sayWord()
         
        
-        print("This should be the list \(sharedWordManager.wordChoices)")
-        button1.setTitle(sharedWordManager.wordChoices[0], for: .normal)
-        button2.setTitle(sharedWordManager.wordChoices[1], for: .normal)
-        button3.setTitle(sharedWordManager.wordChoices[2], for: .normal)
-        button4.setTitle(sharedWordManager.wordChoices[3], for: .normal)
+        print("This should be the list \(WordManager.shared.wordChoices)")
+        button1.setTitle(WordManager.shared.wordChoices[0], for: .normal)
+        button2.setTitle(WordManager.shared.wordChoices[1], for: .normal)
+        button3.setTitle(WordManager.shared.wordChoices[2], for: .normal)
+        button4.setTitle(WordManager.shared.wordChoices[3], for: .normal)
     }
 
     
     func counter() {
-        sharedWordManager.seconds -= 1
-        timerLabel.text = String(sharedWordManager.seconds)
+        WordManager.shared.seconds -= 1
+        timerLabel.text = String(WordManager.shared.seconds)
         
-        if sharedWordManager.seconds == 0 {
+        if WordManager.shared.seconds == 0 {
             timer.invalidate()
-            sharedScoreManager.calculateAchievedLevel()
+            ScoreManager.shared.calculateAchievedLevel()
             self.performSegue(withIdentifier: "gameOver", sender: nil)
         } else {
             return
@@ -70,26 +70,26 @@ class ViewController2: UIViewController {
     
     
     func resetWords() {
-        sharedWordManager.getAnswers()
-        print(sharedWordManager.wordChoices)
-        scoreLabel.text = String(sharedWordManager.score)
-        button1.setTitle(sharedWordManager.wordChoices[0], for: .normal)
-        button2.setTitle(sharedWordManager.wordChoices[1], for: .normal)
-        button3.setTitle(sharedWordManager.wordChoices[2], for: .normal)
-        button4.setTitle(sharedWordManager.wordChoices[3], for: .normal)
+        WordManager.shared.getAnswers()
+        print(WordManager.shared.wordChoices)
+        scoreLabel.text = String(WordManager.shared.score)
+        button1.setTitle(WordManager.shared.wordChoices[0], for: .normal)
+        button2.setTitle(WordManager.shared.wordChoices[1], for: .normal)
+        button3.setTitle(WordManager.shared.wordChoices[2], for: .normal)
+        button4.setTitle(WordManager.shared.wordChoices[3], for: .normal)
     }
     
     
     func sayWord() {
-        myUtterance = AVSpeechUtterance(string: sharedWordManager.currentAnswer)
+        myUtterance = AVSpeechUtterance(string: WordManager.shared.currentAnswer)
         myUtterance.rate = 0.5
         myUtterance.preUtteranceDelay = 0.25
         synth.speak(myUtterance)
     }
     
     func gameWon() {
-        if sharedWordManager.listCount > 4 {
-            sharedScoreManager.calculateAchievedLevel()
+        if WordManager.shared.listCount > 4 {
+            ScoreManager.shared.calculateAchievedLevel()
             self.performSegue(withIdentifier: "gameOver", sender: nil)
         }
         else {
@@ -104,14 +104,14 @@ class ViewController2: UIViewController {
     
     @IBAction func answerButton1(_ sender: UIButton) {
     
-        sharedWordManager.answerKey(correct: sharedWordManager.currentAnswer, guess: button1.currentTitle!)
+        WordManager.shared.answerKey(correct: WordManager.shared.currentAnswer, guess: button1.currentTitle!)
         gameWon()
         resetWords()
         sayWord()
        
     }
     @IBAction func answerButton2(_ sender: UIButton) {
-        sharedWordManager.answerKey(correct: sharedWordManager.currentAnswer, guess: button2.currentTitle!)
+        WordManager.shared.answerKey(correct: WordManager.shared.currentAnswer, guess: button2.currentTitle!)
         gameWon()
         resetWords()
         sayWord()
@@ -120,7 +120,7 @@ class ViewController2: UIViewController {
     }
     
     @IBAction func answerButton3(_ sender: UIButton) {
-        sharedWordManager.answerKey(correct: sharedWordManager.currentAnswer, guess: button3.currentTitle!)
+        WordManager.shared.answerKey(correct: WordManager.shared.currentAnswer, guess: button3.currentTitle!)
         gameWon()
         resetWords()
         sayWord()
@@ -128,7 +128,7 @@ class ViewController2: UIViewController {
     }
     
     @IBAction func answerButton4(_ sender: UIButton) {
-        sharedWordManager.answerKey(correct: sharedWordManager.currentAnswer, guess: button4.currentTitle!)
+        WordManager.shared.answerKey(correct: WordManager.shared.currentAnswer, guess: button4.currentTitle!)
         gameWon()
         resetWords()
         sayWord()
