@@ -19,6 +19,8 @@ class ViewController2: UIViewController {
     // text fields
     @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet weak var scoreLabel: UILabel!
+    @IBOutlet weak var levelLabel: UILabel!
+    
     
     // buttons
     
@@ -108,6 +110,8 @@ class ViewController2: UIViewController {
         gameWon()
         resetWords()
         sayWord()
+        ScoreManager.shared.calculateAchievedLevel()
+        levelLabel.text = ScoreManager.shared.childAchievedLevel
        
     }
     @IBAction func answerButton2(_ sender: UIButton) {
@@ -115,6 +119,8 @@ class ViewController2: UIViewController {
         gameWon()
         resetWords()
         sayWord()
+        ScoreManager.shared.calculateAchievedLevel()
+        levelLabel.text = ScoreManager.shared.childAchievedLevel
 
        
     }
@@ -124,6 +130,8 @@ class ViewController2: UIViewController {
         gameWon()
         resetWords()
         sayWord()
+        ScoreManager.shared.calculateAchievedLevel()
+        levelLabel.text = ScoreManager.shared.childAchievedLevel
 
     }
     
@@ -132,7 +140,8 @@ class ViewController2: UIViewController {
         gameWon()
         resetWords()
         sayWord()
-        
+        ScoreManager.shared.calculateAchievedLevel()
+        levelLabel.text = ScoreManager.shared.childAchievedLevel
         
     }
     

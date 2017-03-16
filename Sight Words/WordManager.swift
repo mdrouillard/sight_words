@@ -14,7 +14,7 @@ class WordManager {
     static let shared = WordManager()
     
     // Words
-    var preWords = ["a", "and", "away", "big", "blue", "can", "come", "down", "find", "for", "funny", "go", "help", "here", "I", "in", "is", "it", "jump", "little", "look", "make", "me", "my", "not", "one", "play", "red", "run", "said", "see", "the", "three", "to", "two", "up", "we", "where", "yellow", "you"]
+    var preWords = ["a", "and", "away", "big", "blue", "can", "come", "down", "find", "for", "funny", "go", "help", "here", "in", "is", "it", "jump", "little", "look", "make", "me", "my", "not", "one", "play", "red", "run", "said", "see", "the", "three", "to", "two", "up", "we", "where", "yellow", "you"]
     
     
     var kWords = ["all", "am", "are", "at", "ate", "be", "black", "brown", "but", "came", "did", "do", "eat", "four", "get", "good", "have", "he", "into", "like", "must", "new", "no", "now", "on", "our", "out", "please", "pretty", "ran", "ride", "saw", "say", "she", "so", "soon", "that", "there", "they", "this", "too", "under", "want", "was", "well", "went", "what", "white", "who", "will", "with", "yes"]
@@ -148,13 +148,14 @@ class WordManager {
             correctAnswerWordLists()
             getAnswers()
             score += 1
-            seconds += 5
+            seconds += 2
             
         }
         else {
             // wrong answer:
             wrongAnswerWordLists()
             getAnswers()
+            seconds -= 2
             
         }
     }
