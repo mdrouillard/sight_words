@@ -15,7 +15,7 @@ class ScoreManager {
     var childAchievedLevel = ""
     var percentCorrect = 0
     var totalNumberWords = 0
-    
+    var awardEarned = ""
    
     
     func calculateAchievedLevel() {
@@ -32,6 +32,7 @@ class ScoreManager {
             childAchievedLevel = "Preschool"
             let percentage = round(scoreDouble / totalThirdGradeLevelWords * 100)
             percentCorrect = Int(percentage)
+            awardEarned = "😀"
            
         }
             
@@ -39,23 +40,27 @@ class ScoreManager {
             childAchievedLevel = "Kindergarten"
             let percentage = round(scoreDouble / totalThirdGradeLevelWords  * 100)
             percentCorrect = Int(percentage)
+            awardEarned = "🌟"
             
         }
         else if scoreDouble >= totalFirstGradeLevelWords && scoreDouble < totalSecondGradeLevelWords {
             childAchievedLevel = "1st Grade"
             let percentage = round(scoreDouble / totalThirdGradeLevelWords * 100)
             percentCorrect = Int(percentage)
+            awardEarned = "🏅"
 
         }
         else if scoreDouble >= totalSecondGradeLevelWords && scoreDouble < totalThirdGradeLevelWords {
             childAchievedLevel = "2nd Grade"
             let percentage = round(scoreDouble / totalThirdGradeLevelWords * 100)
             percentCorrect = Int(percentage)
+            awardEarned = "🎖"
         }
         else {
             childAchievedLevel = "3rd Grade"
             let percentage = round(scoreDouble / totalThirdGradeLevelWords * 100)
             percentCorrect = Int(percentage)
+            awardEarned = "🏆"
         }
         
     }

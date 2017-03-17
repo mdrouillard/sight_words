@@ -60,7 +60,7 @@ class ViewController2: UIViewController {
         WordManager.shared.seconds -= 1
         timerLabel.text = String(WordManager.shared.seconds)
         
-        if WordManager.shared.seconds == 0 {
+        if WordManager.shared.seconds <= 0 {
             timer.invalidate()
             ScoreManager.shared.calculateAchievedLevel()
             self.performSegue(withIdentifier: "gameOver", sender: nil)

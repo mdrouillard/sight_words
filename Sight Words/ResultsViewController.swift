@@ -20,6 +20,8 @@ class ResultsViewController: UIViewController {
         percentCorrect.text = "\(ScoreManager.shared.percentCorrect)%"
         
         wordListToPractice.text = "Level: \(ScoreManager.shared.childAchievedLevel)"
+        
+        awardLabel.text = ScoreManager.shared.awardEarned
 
         // Do any additional setup after loading the view.
     }
@@ -27,6 +29,7 @@ class ResultsViewController: UIViewController {
     // Labels
     @IBOutlet weak var finalScoreLabel: UILabel!
     @IBOutlet weak var percentCorrect: UILabel!
+    @IBOutlet weak var awardLabel: UILabel!
     
     @IBOutlet weak var wordListToPractice: UILabel!
     
