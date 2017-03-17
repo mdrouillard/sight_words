@@ -21,7 +21,7 @@ class ScoreManager {
     func calculateAchievedLevel() {
         let totalPreSchoolLevelWords = Double(WordManager.shared.preschoolWordNumber)
         let totalKindergartenLevelWords = totalPreSchoolLevelWords + Double(WordManager.shared.kindergardenWordNumber)
-        let totalFirstGradeLevelWords = Double(WordManager.shared.preschoolWordNumber + WordManager.shared.firstGradeWordNumber)
+        let totalFirstGradeLevelWords = totalKindergartenLevelWords + Double(WordManager.shared.firstGradeWordNumber)
         let totalSecondGradeLevelWords = totalFirstGradeLevelWords + Double(WordManager.shared.secondGradeWordNumber)
         let totalThirdGradeLevelWords = totalSecondGradeLevelWords + Double(WordManager.shared.thirdGradeWordNumber)
         totalNumberWords = Int(totalThirdGradeLevelWords)
@@ -30,26 +30,26 @@ class ScoreManager {
         
         if scoreDouble <= totalPreSchoolLevelWords {
             childAchievedLevel = "Preschool"
-            let percentage = round(scoreDouble / totalPreSchoolLevelWords * 100)
+            let percentage = round(scoreDouble / totalThirdGradeLevelWords * 100)
             percentCorrect = Int(percentage)
            
         }
             
         else if scoreDouble >= totalPreSchoolLevelWords && scoreDouble < totalFirstGradeLevelWords {
             childAchievedLevel = "Kindergarten"
-            let percentage = round(scoreDouble / totalKindergartenLevelWords  * 100)
+            let percentage = round(scoreDouble / totalThirdGradeLevelWords  * 100)
             percentCorrect = Int(percentage)
             
         }
         else if scoreDouble >= totalFirstGradeLevelWords && scoreDouble < totalSecondGradeLevelWords {
             childAchievedLevel = "1st Grade"
-            let percentage = round(scoreDouble / totalFirstGradeLevelWords * 100)
+            let percentage = round(scoreDouble / totalThirdGradeLevelWords * 100)
             percentCorrect = Int(percentage)
 
         }
         else if scoreDouble >= totalSecondGradeLevelWords && scoreDouble < totalThirdGradeLevelWords {
             childAchievedLevel = "2nd Grade"
-            let percentage = round(scoreDouble / totalSecondGradeLevelWords * 100)
+            let percentage = round(scoreDouble / totalThirdGradeLevelWords * 100)
             percentCorrect = Int(percentage)
         }
         else {

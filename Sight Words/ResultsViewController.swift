@@ -19,7 +19,7 @@ class ResultsViewController: UIViewController {
         
         percentCorrect.text = "\(ScoreManager.shared.percentCorrect)%"
         
-        wordListToPractice.text = "from the \(ScoreManager.shared.childAchievedLevel) word list"
+        wordListToPractice.text = "Level: \(ScoreManager.shared.childAchievedLevel)"
 
         // Do any additional setup after loading the view.
     }
