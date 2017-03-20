@@ -26,7 +26,7 @@ class WordManager {
     var thirdWords = ["about", "better", "bring", "carry", "clean", "cut", "done", "draw", "drink", "eight", "fall", "far", "full", "got", "grow", "hold", "hot", "hurt", "if", "keep", "kind", "laugh", "light", "long", "much", "myself", "never", "only", "own", "pick", "seven", "shall", "show", "six", "small", "start", "ten", "today", "together", "try", "warm"]
     
     
-    var noMoreWords = ["congratulations you won the game"]
+    var noMoreWords = ["congratulations you're the sight word champ"]
     
     var wordChoices = Array<String>()
     var usedWords: [String] = []
@@ -139,6 +139,7 @@ class WordManager {
         seconds = 60
     }
     
+ 
     
     func answerKey(correct: String, guess: String)  {
         
@@ -149,6 +150,7 @@ class WordManager {
             getAnswers()
             score += 1
             seconds += 2
+           
             
         }
         else {
@@ -156,6 +158,7 @@ class WordManager {
             wrongAnswerWordLists()
             getAnswers()
             seconds -= 2
+
             
         }
     }

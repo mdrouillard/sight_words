@@ -11,6 +11,7 @@ import AVFoundation
 
 
 class ViewController2: UIViewController {
+    static let shared = ViewController2()
    
     var timer = Timer()
     let synth = AVSpeechSynthesizer()
@@ -20,7 +21,6 @@ class ViewController2: UIViewController {
     @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var levelLabel: UILabel!
-    
     
     // buttons
     
@@ -88,6 +88,8 @@ class ViewController2: UIViewController {
         myUtterance.preUtteranceDelay = 0.25
         synth.speak(myUtterance)
     }
+    
+
     
     func gameWon() {
         if WordManager.shared.listCount > 4 {

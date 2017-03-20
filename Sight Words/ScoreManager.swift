@@ -47,14 +47,15 @@ class ScoreManager {
             childAchievedLevel = "1st Grade"
             let percentage = round(scoreDouble / totalThirdGradeLevelWords * 100)
             percentCorrect = Int(percentage)
-            awardEarned = "🏅"
+            awardEarned = "🎖"
 
         }
         else if scoreDouble >= totalSecondGradeLevelWords && scoreDouble < totalThirdGradeLevelWords {
             childAchievedLevel = "2nd Grade"
             let percentage = round(scoreDouble / totalThirdGradeLevelWords * 100)
             percentCorrect = Int(percentage)
-            awardEarned = "🎖"
+            awardEarned = "🏅"
+
         }
         else {
             childAchievedLevel = "3rd Grade"
