@@ -17,7 +17,6 @@
 		2E87C34C1E745305000EE077 /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E87C34B1E745305000EE077 /* ResultsViewController.swift */; };
 		2E87C34E1E75C4D3000EE077 /* ScoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E87C34D1E75C4D3000EE077 /* ScoreManager.swift */; };
 		2EAB40531E5CC2D400359AC9 /* ViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EAB40521E5CC2D400359AC9 /* ViewController2.swift */; };
-		2EF95F2F1E8055C100DCA900 /* Electronic_Chime-KevanGC-495939803.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2EF95F2E1E8055C100DCA900 /* Electronic_Chime-KevanGC-495939803.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,7 +32,6 @@
 		2E87C34B1E745305000EE077 /* ResultsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
 		2E87C34D1E75C4D3000EE077 /* ScoreManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreManager.swift; sourceTree = "<group>"; };
 		2EAB40521E5CC2D400359AC9 /* ViewController2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController2.swift; sourceTree = "<group>"; };
-		2EF95F2E1E8055C100DCA900 /* Electronic_Chime-KevanGC-495939803.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "Electronic_Chime-KevanGC-495939803.mp3"; path = "../../../../Downloads/1598-Electronic_Chime-KevanGC-495939803/mp3/Electronic_Chime-KevanGC-495939803.mp3"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,7 +74,6 @@
 		2E827B971E5A184300186DF6 /* Sight Words */ = {
 			isa = PBXGroup;
 			children = (
-				2EF95F2E1E8055C100DCA900 /* Electronic_Chime-KevanGC-495939803.mp3 */,
 				2E827B981E5A184300186DF6 /* AppDelegate.swift */,
 				2E827B9A1E5A184300186DF6 /* ViewController.swift */,
 				2E827B9C1E5A184300186DF6 /* Main.storyboard */,
@@ -151,7 +148,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2EF95F2F1E8055C100DCA900 /* Electronic_Chime-KevanGC-495939803.mp3 in Resources */,
 				2E827BA31E5A184300186DF6 /* LaunchScreen.storyboard in Resources */,
 				2E827BA01E5A184300186DF6 /* Assets.xcassets in Resources */,
 				2E827B9E1E5A184300186DF6 /* Main.storyboard in Resources */,
