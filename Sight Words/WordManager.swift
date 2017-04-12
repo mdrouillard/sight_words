@@ -41,6 +41,7 @@ class WordManager {
     var firstGradeWordNumber = 0
     var secondGradeWordNumber = 0
     var thirdGradeWordNumber = 0
+    var answerIsCorrect = true
     
     private init(){}
     
@@ -150,7 +151,7 @@ class WordManager {
             getAnswers()
             score += 1
             seconds += 2
-           
+            answerIsCorrect = true
             
         }
         else {
@@ -158,7 +159,7 @@ class WordManager {
             wrongAnswerWordLists()
             getAnswers()
             seconds -= 2
-
+            answerIsCorrect = false
             
         }
     }

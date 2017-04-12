@@ -50,28 +50,26 @@ class ViewController2: UIViewController {
         sayWord()
         
        
-        print("This should be the list \(WordManager.shared.wordChoices)")
         button1.setTitle(WordManager.shared.wordChoices[0], for: .normal)
-        button1.layer.cornerRadius = 75
-        button1.layer.borderWidth = 4
+        button1.layer.cornerRadius = 8
+        button1.layer.borderWidth = 2
         button1.layer.borderColor = UIColor.lightGray.cgColor
         
         button2.setTitle(WordManager.shared.wordChoices[1], for: .normal)
-        button2.layer.cornerRadius = 75
-        button2.layer.borderWidth = 4
+        button2.layer.cornerRadius = 8
+        button2.layer.borderWidth = 2
         button2.layer.borderColor = UIColor.lightGray.cgColor
         
         button3.setTitle(WordManager.shared.wordChoices[2], for: .normal)
-        button3.layer.cornerRadius = 75
-        button3.layer.borderWidth = 4
+        button3.layer.cornerRadius = 8
+        button3.layer.borderWidth = 2
         button3.layer.borderColor = UIColor.lightGray.cgColor
         
         button4.setTitle(WordManager.shared.wordChoices[3], for: .normal)
-        button4.layer.cornerRadius = 75
-        button4.layer.borderWidth = 4
+        button4.layer.cornerRadius = 8
+        button4.layer.borderWidth = 2
         button4.layer.borderColor = UIColor.lightGray.cgColor
         
-        playButton.layer.cornerRadius = 75
         
     }
 
@@ -126,6 +124,8 @@ class ViewController2: UIViewController {
         
     }
     
+    
+    
     @IBAction func answerButton1(_ sender: UIButton) {
     
         WordManager.shared.answerKey(correct: WordManager.shared.currentAnswer, guess: button1.currentTitle!)
@@ -134,7 +134,8 @@ class ViewController2: UIViewController {
         sayWord()
         ScoreManager.shared.calculateAchievedLevel()
         levelLabel.text = ScoreManager.shared.childAchievedLevel
-       
+        
+     
     }
     @IBAction func answerButton2(_ sender: UIButton) {
         WordManager.shared.answerKey(correct: WordManager.shared.currentAnswer, guess: button2.currentTitle!)
