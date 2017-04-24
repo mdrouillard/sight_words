@@ -17,6 +17,7 @@
 		2E87C34C1E745305000EE077 /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E87C34B1E745305000EE077 /* ResultsViewController.swift */; };
 		2E87C34E1E75C4D3000EE077 /* ScoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E87C34D1E75C4D3000EE077 /* ScoreManager.swift */; };
 		2EAB40531E5CC2D400359AC9 /* ViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EAB40521E5CC2D400359AC9 /* ViewController2.swift */; };
+		D8362D998F786F50635A6ADF /* Pods_Sight_Words.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E32E9897C8E113129C5BDFD0 /* Pods_Sight_Words.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,9 @@
 		2E87C34B1E745305000EE077 /* ResultsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
 		2E87C34D1E75C4D3000EE077 /* ScoreManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreManager.swift; sourceTree = "<group>"; };
 		2EAB40521E5CC2D400359AC9 /* ViewController2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController2.swift; sourceTree = "<group>"; };
+		CF26F6C9E6FC948E00EA8AFE /* Pods-Sight Words.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sight Words.release.xcconfig"; path = "Pods/Target Support Files/Pods-Sight Words/Pods-Sight Words.release.xcconfig"; sourceTree = "<group>"; };
+		D5C1383945DA527B785A8BB8 /* Pods-Sight Words.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sight Words.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Sight Words/Pods-Sight Words.debug.xcconfig"; sourceTree = "<group>"; };
+		E32E9897C8E113129C5BDFD0 /* Pods_Sight_Words.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sight_Words.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +44,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2E69E3681E6DB6B9005C94A3 /* AVFoundation.framework in Frameworks */,
+				D8362D998F786F50635A6ADF /* Pods_Sight_Words.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -50,6 +55,7 @@
 			isa = PBXGroup;
 			children = (
 				2E69E3671E6DB6B9005C94A3 /* AVFoundation.framework */,
+				E32E9897C8E113129C5BDFD0 /* Pods_Sight_Words.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -60,6 +66,7 @@
 				2E827B971E5A184300186DF6 /* Sight Words */,
 				2E827B961E5A184300186DF6 /* Products */,
 				2E69E3661E6DB6B9005C94A3 /* Frameworks */,
+				D23B52D4545B4DF0BE81819A /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -88,6 +95,15 @@
 			path = "Sight Words";
 			sourceTree = "<group>";
 		};
+		D23B52D4545B4DF0BE81819A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D5C1383945DA527B785A8BB8 /* Pods-Sight Words.debug.xcconfig */,
+				CF26F6C9E6FC948E00EA8AFE /* Pods-Sight Words.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -95,9 +111,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2E827BA71E5A184300186DF6 /* Build configuration list for PBXNativeTarget "Sight Words" */;
 			buildPhases = (
+				43A7723694F737F12A955E1E /* [CP] Check Pods Manifest.lock */,
 				2E827B911E5A184300186DF6 /* Sources */,
 				2E827B921E5A184300186DF6 /* Frameworks */,
 				2E827B931E5A184300186DF6 /* Resources */,
+				AE684B32C8B8AFE0ACBCA272 /* [CP] Embed Pods Frameworks */,
+				12507A09172FF873A6B02717 /* [CP] Copy Pods Resources */,
+				2E2808E61EAE7456003C5107 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -155,6 +175,67 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		12507A09172FF873A6B02717 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Sight Words/Pods-Sight Words-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2E2808E61EAE7456003C5107 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" 555625bccdd15644edbed5e7754e7f69249d54d7 6144442b1a8d21223c26b0979741dc335c8de423ed8db04e6961958b52cda5b1";
+		};
+		43A7723694F737F12A955E1E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		AE684B32C8B8AFE0ACBCA272 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Sight Words/Pods-Sight Words-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		2E827B911E5A184300186DF6 /* Sources */ = {
@@ -287,6 +368,7 @@
 		};
 		2E827BA81E5A184300186DF6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D5C1383945DA527B785A8BB8 /* Pods-Sight Words.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 26LRN437BL;
@@ -300,6 +382,7 @@
 		};
 		2E827BA91E5A184300186DF6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CF26F6C9E6FC948E00EA8AFE /* Pods-Sight Words.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 26LRN437BL;

@@ -55,6 +55,7 @@ class ViewController2: UIViewController {
         button1.layer.borderWidth = 2
         button1.layer.borderColor = UIColor.lightGray.cgColor
         
+        
         button2.setTitle(WordManager.shared.wordChoices[1], for: .normal)
         button2.layer.cornerRadius = 8
         button2.layer.borderWidth = 2
@@ -134,9 +135,8 @@ class ViewController2: UIViewController {
         sayWord()
         ScoreManager.shared.calculateAchievedLevel()
         levelLabel.text = ScoreManager.shared.childAchievedLevel
-        
-     
     }
+    
     @IBAction func answerButton2(_ sender: UIButton) {
         WordManager.shared.answerKey(correct: WordManager.shared.currentAnswer, guess: button2.currentTitle!)
         gameWon()
@@ -144,8 +144,6 @@ class ViewController2: UIViewController {
         sayWord()
         ScoreManager.shared.calculateAchievedLevel()
         levelLabel.text = ScoreManager.shared.childAchievedLevel
-
-       
     }
     
     @IBAction func answerButton3(_ sender: UIButton) {
