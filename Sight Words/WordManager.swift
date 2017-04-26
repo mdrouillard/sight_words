@@ -35,7 +35,7 @@ class WordManager {
     var wordsToWorkOn = Array<String>()
     var listCount = 0
     var score = 0
-    var seconds = 60
+    var seconds = 90
     var preschoolWordNumber = 0
     var kindergardenWordNumber = 0
     var firstGradeWordNumber = 0
